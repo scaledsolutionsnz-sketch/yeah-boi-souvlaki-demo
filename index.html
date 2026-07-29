@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yeah Boi Souvlaki | Greek Souvlaki, Rangiora</title>
+<meta name="description" content="Authentic Greek souvlaki made fresh in Rangiora. Beef, chicken, pork, lamb & vegetarian — packed with fresh local produce. Takeaway, delivery & event catering across North Canterbury.">
+<meta name="theme-color" content="#0c1a27">
+<link rel="canonical" href="https://yeah-boi-souvlaki-demo.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yeah Boi Souvlaki | Greek Souvlaki, Rangiora">
+<meta property="og:description" content="Authentic Greek souvlaki made fresh in Rangiora. Takeaway, delivery & event catering across North Canterbury.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231273b8'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EYB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#13212e; --dark:#0c1a27; --dark-2:#102534;
+  --accent:#1273b8; --accent-d:#0d5d97; --gold:#e2a63c;
+  --bone:#f5f2ea; --paper:#ffffff; --line:#e6e0d4; --muted:#57697a;
+  --radius:18px; --radius-sm:12px; --maxw:1180px;
+  --shadow:0 18px 45px -20px rgba(12,26,39,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;image-orientation:from-image}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Syne',sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.02em}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.eyebrow{font-family:'Outfit';font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--accent);display:inline-flex;align-items:center;gap:.5rem}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
+section{position:relative}
+.section-pad{padding:86px 0}
+.svg-i{width:22px;height:22px;flex:none;stroke-width:1.7}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:'Outfit';font-weight:600;font-size:1rem;padding:15px 26px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s ease,background .2s ease,box-shadow .2s ease;min-height:52px;line-height:1}
+.btn:hover{transform:translateY(-2px)}
+.btn--accent{background:var(--accent);color:#fff;box-shadow:0 12px 26px -12px rgba(18,115,184,.7)}
+.btn--accent:hover{background:var(--accent-d)}
+.btn--gold{background:var(--gold);color:#2a1f06}
+.btn--ghost{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
+.btn--ghost:hover{background:rgba(255,255,255,.12)}
+.btn--dark{background:var(--ink);color:#fff}
+.btn--outline{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn--outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* intro overlay */
+#intro{position:fixed;inset:0;z-index:2000;background:var(--dark);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;transition:opacity .7s ease,visibility .7s ease}
+#intro.hide{opacity:0;visibility:hidden}
+#intro .mark{font-family:'Syne';font-weight:800;font-size:clamp(1.7rem,7vw,2.9rem);color:#fff;letter-spacing:-.02em;opacity:0;transform:translateY(14px);animation:introUp .8s .1s ease forwards;text-align:center;padding:0 20px}
+#intro .mark span{color:var(--gold)}
+#intro .tag{color:rgba(255,255,255,.6);font-size:.82rem;letter-spacing:.24em;text-transform:uppercase;opacity:0;animation:introUp .8s .35s ease forwards}
+@keyframes introUp{to{opacity:1;transform:none}}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .3s ease,box-shadow .3s ease,padding .3s ease;padding:14px 0}
+header.scrolled{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);box-shadow:0 6px 24px -18px rgba(0,0,0,.4)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Syne';font-weight:800;font-size:1.2rem;color:#fff;transition:color .3s ease}
+header.scrolled .brand{color:var(--ink)}
+.brand .logo{width:40px;height:40px;border-radius:11px;background:var(--accent);display:grid;place-items:center;color:#fff;font-family:'Syne';font-weight:800;font-size:1rem;flex:none;box-shadow:0 6px 16px -8px rgba(18,115,184,.8)}
+.brand b{font-weight:800}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-weight:500;font-size:.96rem;color:rgba(255,255,255,.9);position:relative;transition:color .2s ease}
+.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--accent);transition:width .25s ease}
+.nav-links a:not(.btn):hover::after{width:100%}
+header.scrolled .nav-links a{color:var(--ink)}
+.nav-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff!important;padding:11px 20px;border-radius:999px;font-weight:600;min-height:44px}
+.nav-cta:hover{background:var(--accent-d)}
+.nav-cta::after{display:none!important}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:10px;z-index:1001}
+.burger span{width:26px;height:2.5px;background:#fff;border-radius:2px;transition:.3s}
+header.scrolled .burger span{background:var(--ink)}
+.burger.open span{background:var(--ink)}
+.burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;background:var(--dark);overflow:hidden;padding:120px 0 64px}
+.hero__slides{position:absolute;inset:0;z-index:0}
+.hero__slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease;transform:scale(1.05);filter:saturate(1.05) contrast(1.03)}
+.hero__slide.active{opacity:1;animation:kenburns 8s ease forwards}
+@keyframes kenburns{to{transform:scale(1.12)}}
+.hero__scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(9,20,30,.72) 0%,rgba(9,20,30,.55) 45%,rgba(9,20,30,.82) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero__inner{max-width:720px;color:#fff}
+.hero .eyebrow{color:#fff}
+.hero .eyebrow::before{background:var(--gold)}
+.hero h1{font-size:clamp(2.35rem,7vw,4.4rem);margin:18px 0 18px;color:#fff}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{font-size:clamp(1.05rem,2.4vw,1.28rem);color:rgba(255,255,255,.9);max-width:560px;font-weight:300}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero__badge{margin-top:26px;display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:10px 20px;color:#fff}
+.stars{display:inline-flex;gap:2px;color:var(--gold)}
+.stars svg{width:16px;height:16px;fill:currentColor}
+.hero__badge span{font-size:.9rem;font-weight:500;color:rgba(255,255,255,.92)}
+.hero__badge b{font-weight:700}
+
+/* order strip in hero base */
+.orderline{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:26px;color:rgba(255,255,255,.75);font-size:.85rem}
+.orderline a{color:#fff;font-weight:600;border-bottom:1.5px solid var(--gold);padding-bottom:1px}
+
+/* trust strip */
+.trust{background:var(--ink);color:#fff}
+.trust .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.trust .item{display:flex;align-items:flex-start;gap:14px;padding:26px 20px}
+.trust .item+.item{border-left:1px solid rgba(255,255,255,.1)}
+.trust .ico{width:46px;height:46px;border-radius:12px;background:rgba(18,115,184,.22);color:#5cb4ee;display:grid;place-items:center;flex:none}
+.trust .ico svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.7}
+.trust h4{font-size:1.02rem;font-family:'Outfit';font-weight:700;margin-bottom:2px}
+.trust p{font-size:.88rem;color:rgba(255,255,255,.62);line-height:1.45}
+
+/* section heading */
+.shead{max-width:640px;margin-bottom:46px}
+.shead.center{margin-left:auto;margin-right:auto;text-align:center}
+.shead h2{font-size:clamp(1.9rem,4.6vw,2.9rem);margin:14px 0 14px}
+.shead p{color:var(--muted);font-size:1.05rem}
+
+/* menu */
+.menu{background:var(--bone)}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 55px -24px rgba(12,26,39,.45)}
+.card__img{position:relative;aspect-ratio:4/3;overflow:hidden}
+.card__img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.03);transition:transform .5s ease}
+.card:hover .card__img img{transform:scale(1.06)}
+.card__tag{position:absolute;top:12px;left:12px;background:rgba(12,26,39,.82);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+.card__body{padding:22px 22px 26px}
+.card__body h3{font-size:1.3rem;margin-bottom:8px}
+.card__body p{color:var(--muted);font-size:.94rem}
+.card__meta{margin-top:14px;display:inline-flex;align-items:center;gap:7px;color:var(--accent);font-weight:600;font-size:.86rem}
+.card__meta svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.menu-note{margin-top:34px;text-align:center;color:var(--muted);font-size:.98rem}
+.menu-note b{color:var(--ink)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-figure{position:relative}
+.about-figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);filter:saturate(1.05) contrast(1.03);box-shadow:var(--shadow)}
+.about-figure .tag{position:absolute;right:-14px;bottom:-14px;background:var(--accent);color:#fff;border-radius:var(--radius-sm);padding:16px 20px;box-shadow:var(--shadow);max-width:200px}
+.about-figure .tag b{font-family:'Syne';font-size:1.5rem;display:block;line-height:1}
+.about-figure .tag span{font-size:.78rem;color:rgba(255,255,255,.85)}
+.about h2{font-size:clamp(1.9rem,4.4vw,2.8rem);margin:14px 0 18px}
+.about p{color:var(--muted);margin-bottom:14px}
+.checklist{list-style:none;margin:24px 0 30px;display:grid;gap:12px}
+.checklist li{display:flex;align-items:center;gap:12px;font-weight:500;color:var(--ink)}
+.checklist .tick{width:26px;height:26px;border-radius:50%;background:rgba(18,115,184,.12);color:var(--accent);display:grid;place-items:center;flex:none}
+.checklist .tick svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* crew */
+.crew{background:var(--bone)}
+.crew-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:760px;margin:0 auto}
+.crew .card2{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;text-align:center;box-shadow:var(--shadow)}
+.avatar{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;font-family:'Syne';font-weight:800;font-size:1.7rem;color:#fff;background:var(--dark);border:3px solid var(--accent);box-shadow:0 0 0 6px rgba(18,115,184,.1)}
+.crew .card2 h3{font-size:1.15rem;font-family:'Outfit';font-weight:700}
+.crew .role{color:var(--accent);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;margin:4px 0 12px}
+.crew .card2 p{color:var(--muted);font-size:.92rem}
+
+/* reviews */
+.reviews .badge-note{display:inline-flex;align-items:center;gap:8px;background:rgba(18,115,184,.1);color:var(--accent-d);font-size:.76rem;font-weight:600;padding:6px 14px;border-radius:999px;margin-bottom:16px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.rev .stars{margin-bottom:14px}
+.rev p{color:var(--ink);font-size:1rem;line-height:1.6;flex:1}
+.rev .who{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.rev .who .a{width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-family:'Syne';flex:none}
+.rev .who b{display:block;font-size:.95rem}
+.rev .who span{font-size:.8rem;color:var(--muted)}
+.rev-more{text-align:center;margin-top:38px}
+
+/* review banner */
+.rbanner{background:var(--dark);color:#fff;text-align:center}
+.rbanner .g{max-width:640px;margin:0 auto}
+.rbanner h2{font-size:clamp(1.7rem,4vw,2.5rem);color:#fff;margin-bottom:14px}
+.rbanner p{color:rgba(255,255,255,.7);margin-bottom:28px}
+
+/* contact */
+.contact{background:var(--dark-2);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.contact h2{color:#fff;font-size:clamp(1.9rem,4.4vw,2.8rem);margin:14px 0 20px}
+.contact .eyebrow{color:var(--gold)}
+.contact .eyebrow::before{background:var(--gold)}
+.crow{display:flex;align-items:center;gap:15px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.crow .ico{width:44px;height:44px;border-radius:11px;background:rgba(18,115,184,.2);color:#5cb4ee;display:grid;place-items:center;flex:none}
+.crow .ico svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7}
+.crow b{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5);font-weight:600}
+.crow a,.crow span{color:#fff;font-size:1.05rem;font-weight:500}
+.socials{display:flex;gap:12px;margin-top:24px}
+.socials a{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#fff;transition:background .2s ease,transform .2s ease}
+.socials a:hover{background:var(--accent);transform:translateY(-3px)}
+.socials svg{width:20px;height:20px;fill:currentColor}
+.contact-card{background:#fff;color:var(--ink);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+.contact-card h3{font-size:1.4rem;margin-bottom:8px}
+.contact-card p{color:var(--muted);font-size:.95rem;margin-bottom:22px}
+.contact-card .btn{width:100%;margin-bottom:12px;font-size:1.05rem;padding:17px}
+.contact-card .fine{font-size:.82rem;color:var(--muted);text-align:center;margin-top:8px;margin-bottom:0}
+
+/* map */
+.map{padding:0 0 0}
+.map .wrap{padding-top:0}
+.map-box{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);line-height:0}
+.map-box iframe{width:100%;height:380px;border:0;display:block;filter:saturate(1.05)}
+.map-head{text-align:center;padding:70px 0 34px}
+
+/* footer */
+footer{background:var(--dark);color:rgba(255,255,255,.72);padding:64px 0 26px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand{display:flex;align-items:center;gap:11px;font-family:'Syne';font-weight:800;font-size:1.25rem;color:#fff;margin-bottom:14px}
+.foot-brand .logo{width:38px;height:38px;border-radius:10px;background:var(--accent);display:grid;place-items:center;color:#fff;font-size:.95rem}
+.foot-col p{font-size:.92rem;line-height:1.7;max-width:300px}
+.foot-col h5{color:#fff;font-family:'Outfit';font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:16px}
+.foot-col ul{list-style:none;display:grid;gap:10px}
+.foot-col a{font-size:.92rem;transition:color .2s ease}
+.foot-col a:hover{color:#fff}
+.foot-socials{display:flex;gap:10px;margin-top:18px}
+.foot-socials a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#fff;transition:background .2s ease}
+.foot-socials a:hover{background:var(--accent)}
+.foot-socials svg{width:18px;height:18px;fill:currentColor}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;font-size:.83rem;color:rgba(255,255,255,.5)}
+.foot-bottom a{color:rgba(255,255,255,.5)}
+.foot-bottom a:hover{color:#fff}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .menu-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .nav-links{position:fixed;top:0;right:0;height:100vh;width:min(80vw,320px);background:#fff;flex-direction:column;justify-content:center;align-items:flex-start;padding:40px;gap:22px;transform:translateX(100%);transition:transform .35s ease;box-shadow:-20px 0 60px -20px rgba(0,0,0,.4)}
+  .nav-links.open{transform:none}
+  .nav-links a{color:var(--ink)!important;font-size:1.1rem}
+  .nav-links .nav-cta{color:#fff!important;width:100%}
+  .burger{display:flex}
+  .trust .grid{grid-template-columns:1fr}
+  .trust .item+.item{border-left:0;border-top:1px solid rgba(255,255,255,.1)}
+  .section-pad{padding:64px 0}
+  .about-figure .tag{right:12px}
+}
+@media(max-width:560px){
+  .menu-grid,.rev-grid,.crew-grid,.foot-grid{grid-template-columns:1fr}
+  .hero{padding-top:110px}
+  .hero__cta{flex-direction:column;align-items:stretch}
+  .hero__cta .btn{width:100%}
+  .foot-bottom{flex-direction:column}
+  .wrap{padding:0 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .hero__slide.active{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- intro -->
+<div id="intro">
+  <div class="mark">Yeah Boi <span>Souvlaki</span></div>
+  <div class="tag">Rangiora &middot; North Canterbury</div>
+</div>
+
+<!-- header -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand"><span class="logo">YB</span><span>Yeah Boi <b>Souvlaki</b></span></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#find">Find Us</a>
+      <a href="tel:+64275040531" class="nav-cta">
+        <svg class="svg-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        027 504 0531
+      </a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="hero__slides" id="slides">
+    <div class="hero__slide active" style="background-image:url('https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1920&q=80')"></div>
+    <div class="hero__slide" data-bg="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1920&q=80"></div>
+    <div class="hero__slide" data-bg="https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=1920&q=80"></div>
+  </div>
+  <div class="hero__scrim"></div>
+  <div class="wrap">
+    <div class="hero__inner">
+      <span class="eyebrow">Rangiora &middot; North Canterbury</span>
+      <h1>Authentic Greek souvlaki, <em>made fresh</em> in Rangiora.</h1>
+      <p class="lead">Beef, chicken, pork, lamb or veg — grilled to order, wrapped in warm pita with fresh local produce and your pick of three sauces. Real Greek street food, right here in Waimakariri.</p>
+      <div class="hero__cta">
+        <a href="tel:+64275040531" class="btn btn--accent">
+          <svg class="svg-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call to order
+        </a>
+        <a href="#menu" class="btn btn--ghost">See the menu</a>
+      </div>
+      <div class="hero__badge">
+        <span class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </span>
+        <span><b>Loved by locals</b> across North Canterbury</span>
+      </div>
+      <div class="orderline">
+        <span>Order online:</span>
+        <a href="https://www.ubereats.com/nz/store/yeah-boi-souvlaki-ashley-st/V8Qqzf49U32B5eUcqwZn_g" target="_blank" rel="noopener">Uber Eats</a>
+        <a href="https://www.delivereasy.co.nz/yeah-boi-souvlaki-waimakariri-delivery" target="_blank" rel="noopener">Delivereasy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- trust -->
+<section class="trust">
+  <div class="wrap">
+    <div class="grid">
+      <div class="item">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><h4>171 Ashley Street, Rangiora</h4><p>Fresh souvlaki made on the spot — dine local, takeaway or grab it on the go.</p></div>
+      </div>
+      <div class="item">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg></span>
+        <div><h4>Beef, chicken, pork, lamb &amp; veg</h4><p>Real Greek recipes, marinated meats and produce prepped fresh each day.</p></div>
+      </div>
+      <div class="item">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M20 7h-3V5a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM9 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2H9z"/></svg></span>
+        <div><h4>Takeaway, delivery &amp; catering</h4><p>Feeding Rangiora, Kaiapoi, Woodend, Oxford &amp; greater Christchurch — plus events.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- menu -->
+<section class="menu section-pad" id="menu">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <span class="eyebrow" style="justify-content:center">The Menu</span>
+      <h2>Pick your souvlaki, we'll do the rest</h2>
+      <p>Every souvlaki comes wrapped in warm pita with lettuce, tomato, carrot, red onion and any three sauces. Add chips and a drink to make it a combo.</p>
+    </div>
+    <div class="menu-grid">
+      <article class="card reveal">
+        <div class="card__img"><span class="card__tag">Most popular</span><img src="https://images.unsplash.com/photo-1662116765994-1e4200c43589?auto=format&fit=crop&w=800&q=80" alt="Beef souvlaki wrapped in warm pita bread" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <h3>Beef Souvlaki</h3>
+          <p>Marinated beef grilled over the flame, loaded into fresh pita with salad and your three sauces.</p>
+          <span class="card__meta">In a wrap or on a plate <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card__img"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80" alt="Chicken souvlaki wrap sliced in half" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <h3>Chicken Souvlaki</h3>
+          <p>Tender marinated chicken, chargrilled and wrapped with crisp fresh produce and creamy tzatziki.</p>
+          <span class="card__meta">In a wrap or on a plate <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card__img"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80" alt="Grilled lamb and mezze platter with salad and pita" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <h3>Lamb Souvlaki</h3>
+          <p>Slow-marinated lamb with Mediterranean herbs — rich, tender and finished with a squeeze of lemon.</p>
+          <span class="card__meta">In a wrap or on a plate <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card__img"><img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=800&q=80" alt="Vegetarian Mediterranean bowl with chickpeas, olives and pita" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <h3>Vegetarian Souvlaki</h3>
+          <p>A loaded meat-free wrap — grilled veg, chickpeas, salad and sauces, every bit as good as the classic.</p>
+          <span class="card__meta">In a wrap or on a plate <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card__img"><img src="https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=800&q=80" alt="Bowl of seasoned Greek chips" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <h3>Chips &amp; Sides</h3>
+          <p>Golden seasoned chips, Greek salad and baklava to finish — the perfect sidekicks to your souvlaki.</p>
+          <span class="card__meta">Add to any order <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card__img"><span class="card__tag">Book ahead</span><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=80" alt="Souvlaki skewers, chips and pita platter for catering" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <h3>Event Catering</h3>
+          <p>Parties, work do's and functions across North Canterbury — souvlaki platters that feed a crowd. Give Matt a call.</p>
+          <span class="card__meta">Enquire about catering <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </article>
+    </div>
+    <p class="menu-note reveal">Meal deals come with <b>souvlaki, chips and a can of drink</b> &mdash; sauces include tzatziki, garlic, sweet chilli, BBQ, aioli &amp; more.</p>
+  </div>
+</section>
+
+<!-- about -->
+<section class="about section-pad" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-figure reveal">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1000&q=80" alt="Fresh Greek salad with feta, olives and red onion" loading="lazy" width="1000" height="750">
+        <div class="tag"><b>Fresh</b><span>Local produce, prepped every day</span></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Our Story</span>
+        <h2>Real Greek souvlaki, right here in North Canterbury</h2>
+        <p>Yeah Boi Souvlaki brings proper Greek street food to Rangiora — marinated meats grilled to order, warm pita, and salads packed with fresh local produce. No shortcuts, no reheated leftovers: just honest souvlaki made the way it should be.</p>
+        <p>Whether it's a quick lunch, the family's Friday night takeaway, or catering for your next event, we've got you sorted across Rangiora, Kaiapoi, Woodend, Oxford and greater Christchurch.</p>
+        <ul class="checklist">
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Fresh local produce, prepped daily</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Traditional Greek recipes &amp; marinades</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Locally owned &amp; operated in Rangiora</li>
+        </ul>
+        <a href="#find" class="btn btn--accent">Find us &amp; order</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- crew -->
+<section class="crew section-pad">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <span class="eyebrow" style="justify-content:center">The Crew</span>
+      <h2>The team behind the grill</h2>
+      <p>Local people making proper souvlaki — you'll usually find them chatting away while the pita warms.</p>
+    </div>
+    <div class="crew-grid">
+      <div class="card2 reveal">
+        <div class="avatar">M</div>
+        <h3>Matt</h3>
+        <div class="role">Owner &amp; Grill Master</div>
+        <p>The man behind Yeah Boi Souvlaki — marinating, grilling and making sure every wrap goes out fresh.</p>
+      </div>
+      <div class="card2 reveal">
+        <div class="avatar">YB</div>
+        <h3>The Souvlaki Crew</h3>
+        <div class="role">Front of House &amp; Kitchen</div>
+        <p>The friendly locals prepping produce, wrapping souvlaki and keeping the queue moving with a smile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section class="reviews section-pad" id="reviews">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <span class="badge-note">Example reviews &mdash; real Google reviews load here once connected</span>
+      <h2 style="font-size:clamp(1.9rem,4.6vw,2.9rem)">What locals are saying</h2>
+      <p>Word travels fast in North Canterbury when the souvlaki's this good.</p>
+    </div>
+    <div class="rev-grid">
+      <article class="rev reveal">
+        <span class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <p>"Best souvlaki in Rangiora, hands down. The lamb is unreal and the pita is always warm and fresh. Been back three times this month already."</p>
+        <div class="who"><span class="a">JM</span><div><b>Jesse M.</b><span>Rangiora</span></div></div>
+      </article>
+      <article class="rev reveal">
+        <span class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <p>"Grabbed a chicken souvlaki and chips on the way home to Kaiapoi. Massive portions, proper flavour and the sauces are next level. Highly recommend."</p>
+        <div class="who"><span class="a">TW</span><div><b>Tania W.</b><span>Kaiapoi</span></div></div>
+      </article>
+      <article class="rev reveal">
+        <span class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <p>"Had Matt cater our work function in Woodend and everyone was raving. Fresh, fast and heaps of it. Will definitely be booking again for the next one."</p>
+        <div class="who"><span class="a">RP</span><div><b>Reon P.</b><span>Woodend</span></div></div>
+      </article>
+    </div>
+    <div class="rev-more reveal">
+      <a href="https://www.google.com/maps/search/?api=1&query=Yeah+Boi+Souvlaki+Rangiora" target="_blank" rel="noopener" class="btn btn--outline">
+        See all our Google reviews
+        <svg class="svg-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- review banner -->
+<section class="rbanner section-pad">
+  <div class="wrap g">
+    <span class="eyebrow" style="justify-content:center;color:#fff">Enjoyed your souvlaki?</span>
+    <h2>Happy with your feed? Leave us a review</h2>
+    <p>A quick review on Google helps other locals find us — and means the world to a small Rangiora business.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Yeah+Boi+Souvlaki+Rangiora" target="_blank" rel="noopener" class="btn btn--gold">
+      <svg class="svg-i" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Leave a Google review
+    </a>
+  </div>
+</section>
+
+<!-- contact -->
+<section class="contact section-pad" id="find">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">Find Us &amp; Order</span>
+        <h2>Come grab a souvlaki</h2>
+        <div class="crow">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><b>Where</b><span>171 Ashley Street, Rangiora 7400</span></div>
+        </div>
+        <div class="crow">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><b>Phone / orders</b><a href="tel:+64275040531">027 504 0531</a></div>
+        </div>
+        <div class="crow">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></span>
+          <div><b>Email</b><a href="#" data-gmail data-user="mlepper27" data-domain="gmail.com" data-su="Souvlaki%20order%20%2F%20catering%20enquiry" data-body="Hi%20Matt%2C%0A%0AI%27d%20like%20to%20place%20an%20order%20%2F%20ask%20about%20catering%20with%20Yeah%20Boi%20Souvlaki.%0A%0A">Email Matt</a></div>
+        </div>
+        <div class="crow">
+          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><b>Hours</b><span>See Facebook for current trading hours</span></div>
+        </div>
+        <div class="socials">
+          <a href="https://www.facebook.com/yeahboisouvlaki/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://www.instagram.com/explore/search/keyword/?q=yeah%20boi%20souvlaki" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5.01-4.74.07-.9.04-1.38.19-1.7.32-.43.16-.73.36-1.05.68-.32.32-.52.62-.68 1.05-.13.32-.28.8-.32 1.7C3.21 8.85 3.2 9.2 3.2 12s.01 3.15.07 4.39c.04.9.19 1.38.32 1.7.16.43.36.73.68 1.05.32.32.62.52 1.05.68.32.13.8.28 1.7.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.7-.32.43-.16.73-.36 1.05-.68.32-.32.52-.62.68-1.05.13-.32.28-.8.32-1.7.06-1.24.07-1.59.07-4.39s-.01-3.15-.07-4.39c-.04-.9-.19-1.38-.32-1.7a2.8 2.8 0 0 0-.68-1.05 2.8 2.8 0 0 0-1.05-.68c-.32-.13-.8-.28-1.7-.32C15.5 4.01 15.15 4 12 4zm0 3.06A4.94 4.94 0 1 0 12 16.94 4.94 4.94 0 0 0 12 7.06zm0 8.14A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4zm6.28-8.34a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg></a>
+          <a href="https://www.tiktok.com/search?q=yeah%20boi%20souvlaki" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.06v12.4a2.6 2.6 0 1 1-2.6-2.6c.27 0 .53.04.78.12V9.8a5.7 5.7 0 0 0-.78-.06 5.66 5.66 0 1 0 5.66 5.66V9.01a7.3 7.3 0 0 0 4.06 1.23V7.18a4.28 4.28 0 0 1-3-1.36z"/></svg></a>
+        </div>
+      </div>
+      <div class="contact-card reveal">
+        <h3>Order now</h3>
+        <p>Ring through your order or send Matt an email — no forms, no fuss. We'll have it hot and ready.</p>
+        <a href="tel:+64275040531" class="btn btn--accent">
+          <svg class="svg-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 027 504 0531
+        </a>
+        <a href="#" data-gmail data-user="mlepper27" data-domain="gmail.com" data-su="Souvlaki%20order%20%2F%20catering%20enquiry" data-body="Hi%20Matt%2C%0A%0AI%27d%20like%20to%20place%20an%20order%20%2F%20ask%20about%20catering%20with%20Yeah%20Boi%20Souvlaki.%0A%0A" class="btn btn--dark">
+          <svg class="svg-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          Email Matt
+        </a>
+        <a href="https://www.ubereats.com/nz/store/yeah-boi-souvlaki-ashley-st/V8Qqzf49U32B5eUcqwZn_g" target="_blank" rel="noopener" class="btn btn--outline">Order on Uber Eats</a>
+        <p class="fine">Serving Rangiora, Kaiapoi, Woodend, Oxford &amp; Christchurch</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- map -->
+<section class="map">
+  <div class="map-head">
+    <div class="wrap">
+      <span class="eyebrow" style="justify-content:center">Where to find us</span>
+      <h2 style="font-family:'Syne';font-size:clamp(1.6rem,4vw,2.3rem);margin-top:12px">171 Ashley Street, Rangiora</h2>
+    </div>
+  </div>
+  <div class="wrap" style="padding-bottom:80px">
+    <div class="map-box">
+      <iframe src="https://www.google.com/maps?q=171%20Ashley%20Street%2C%20Rangiora%207400%2C%20New%20Zealand&output=embed" loading="lazy" title="Map to Yeah Boi Souvlaki, 171 Ashley Street, Rangiora" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand"><span class="logo">YB</span>Yeah Boi Souvlaki</div>
+        <p>Authentic Greek souvlaki made fresh in Rangiora. Takeaway, delivery and event catering across North Canterbury.</p>
+        <div class="foot-socials">
+          <a href="https://www.facebook.com/yeahboisouvlaki/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://www.instagram.com/explore/search/keyword/?q=yeah%20boi%20souvlaki" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2z"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1"/></svg></a>
+          <a href="https://www.tiktok.com/search?q=yeah%20boi%20souvlaki" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.06v12.4a2.6 2.6 0 1 1-2.6-2.6c.27 0 .53.04.78.12V9.8a5.7 5.7 0 0 0-.78-.06 5.66 5.66 0 1 0 5.66 5.66V9.01a7.3 7.3 0 0 0 4.06 1.23V7.18a4.28 4.28 0 0 1-3-1.36z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="#menu">Souvlaki</a></li>
+          <li><a href="#menu">Chips &amp; sides</a></li>
+          <li><a href="#menu">Event catering</a></li>
+          <li><a href="#about">About us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Order &amp; visit</h5>
+        <ul>
+          <li><a href="tel:+64275040531">027 504 0531</a></li>
+          <li><a href="https://www.ubereats.com/nz/store/yeah-boi-souvlaki-ashley-st/V8Qqzf49U32B5eUcqwZn_g" target="_blank" rel="noopener">Uber Eats</a></li>
+          <li><a href="https://www.delivereasy.co.nz/yeah-boi-souvlaki-waimakariri-delivery" target="_blank" rel="noopener">Delivereasy</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Yeah+Boi+Souvlaki+Rangiora" target="_blank" rel="noopener">Leave a review</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr"></span> Yeah Boi Souvlaki &middot; Rangiora, North Canterbury</span>
+      <span><a href="terms.html">Terms &amp; Conditions</a> &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // intro
+  window.addEventListener('load',function(){
+    setTimeout(function(){var i=document.getElementById('intro');if(i)i.classList.add('hide');},1500);
+  });
+  // year
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  // header scroll
+  var header=document.getElementById('header');
+  function onScroll(){if(window.scrollY>40)header.classList.add('scrolled');else header.classList.remove('scrolled');}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  // burger
+  var burger=document.getElementById('burger'),links=document.getElementById('navlinks');
+  burger.addEventListener('click',function(){burger.classList.toggle('open');links.classList.toggle('open');});
+  links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){burger.classList.remove('open');links.classList.remove('open');});});
+  // hero slideshow (lazy load bg, respect reduced motion)
+  var slides=Array.prototype.slice.call(document.querySelectorAll('.hero__slide'));
+  slides.forEach(function(s){var bg=s.getAttribute('data-bg');if(bg){var im=new Image();im.src=bg;im.onload=function(){s.style.backgroundImage="url('"+bg+"')";};}});
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce&&slides.length>1){
+    var idx=0;
+    setInterval(function(){slides[idx].classList.remove('active');idx=(idx+1)%slides.length;slides[idx].classList.add('active');},5500);
+  }
+  // gmail compose links
+  document.querySelectorAll('a[data-gmail]').forEach(function(a){
+    var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');
+    a.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+(a.getAttribute('data-su')||'')+'&body='+(a.getAttribute('data-body')||'');
+    a.target='_blank';a.rel='noopener';
+  });
+  // reveal on scroll
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+})();
+</script>
+</body>
+</html>
