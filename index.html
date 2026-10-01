@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yeah Boi Souvlaki | Greek Souvlaki, Rangiora</title>
-<meta name="description" content="Greek souvlaki made fresh in Rangiora. Beef, chicken, pork, lamb & vegetarian, packed with fresh local produce. Takeaway, delivery & event catering across North Canterbury.">
+<meta name="description" content="Greek souvlaki made fresh in Rangiora. Pork, beef, lamb, chicken or falafel in warm pita, with gluten free options. Takeaway, delivery & event catering across North Canterbury.">
 <meta name="theme-color" content="#0c1a27">
 <link rel="canonical" href="https://yeah-boi-souvlaki-demo.vercel.app/">
 <meta property="og:type" content="website">
@@ -137,6 +137,13 @@ header.scrolled .burger span{background:#fff}
 .card__meta svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 .menu-note{margin-top:34px;text-align:center;color:var(--muted);font-size:.98rem}
 .menu-note b{color:var(--ink)}
+.card__meta a{display:inline-flex;align-items:center;gap:7px;color:inherit}
+.menu-info{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.menu-info div{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+.menu-info b{display:block;color:var(--ink);font-size:1.02rem;margin-bottom:4px}
+.menu-info span{color:var(--muted);font-size:.92rem}
+.menu-cta{margin-top:26px;text-align:center}
+@media (max-width:760px){.menu-info{grid-template-columns:1fr}}
 
 /* about */
 .about-grid{display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center}
@@ -305,13 +312,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.72);padding:64px 0 26px}
     <div class="hero__inner">
       <span class="eyebrow">Rangiora &middot; North Canterbury</span>
       <h1>Greek souvlaki, <em>made fresh</em> in Rangiora.</h1>
-      <p class="lead">Beef, chicken, pork, lamb or veg — grilled to order, wrapped in warm pita with fresh local produce and your pick of three sauces. Real Greek street food, right here in Waimakariri.</p>
+      <p class="lead">Pork, beef, lamb, chicken or falafel, grilled to order and wrapped in warm pita with fresh local produce and your pick of three sauces. Real Greek street food, right here in Waimakariri.</p>
       <div class="hero__cta">
         <a href="tel:+64275040531" class="btn btn--accent">
           <svg class="svg-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Call to order
         </a>
-        <a href="#menu" class="btn btn--ghost">See the menu</a>
+        <a href="menu/yeah-boi-menu.pdf" target="_blank" rel="noopener" class="btn btn--ghost">See the menu</a>
       </div>
       <div class="hero__badge">
         <span class="stars" aria-label="5 out of 5 stars">
@@ -339,59 +346,65 @@ footer{background:var(--dark);color:rgba(255,255,255,.72);padding:64px 0 26px}
     <div class="shead center reveal">
       <span class="eyebrow" style="justify-content:center">The Menu</span>
       <h2>Pick your souvlaki, we'll do the rest</h2>
-      <p>Every souvlaki comes wrapped in warm pita with lettuce, tomato, carrot, red onion and any three sauces. Add chips and a drink to make it a combo.</p>
+      <p>Every souvlaki comes wrapped in warm pita bread with fresh salad and any three homemade sauces. Add fries and a drink to make it a combo.</p>
     </div>
     <div class="menu-grid">
       <article class="card reveal">
-        <div class="card__img"><span class="card__tag">Most popular</span><img src="img/p1.jpg" alt="Beef souvlaki wrapped in warm pita bread" loading="lazy" width="800" height="600"></div>
+        <div class="card__img"><span class="card__tag">Most popular</span><img src="img/p4.jpg" alt="Souvlaki wrapped in warm pita bread" loading="lazy" width="800" height="600"></div>
         <div class="card__body">
-          <h3>Beef Souvlaki</h3>
-          <p>Marinated beef grilled over the flame, loaded into fresh pita with salad and your three sauces.</p>
-          <span class="card__meta">In a wrap or on a plate <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3>Souvlaki</h3>
+          <p>Pick your protein: pork, beef, lamb, chicken or falafel. Wrapped in warm pita with lettuce, tomato, carrot, red onion and any three sauces.</p>
+          <span class="card__meta">M $19 &middot; L $22</span>
         </div>
       </article>
       <article class="card reveal">
-        <div class="card__img"><img src="img/p4.jpg" alt="Chicken souvlaki wrap sliced in half" loading="lazy" width="800" height="600"></div>
+        <div class="card__img"><img src="img/p2.jpg" alt="Open pita loaded with grilled meat, salad and sauces" loading="lazy" width="800" height="600"></div>
         <div class="card__body">
-          <h3>Chicken Souvlaki</h3>
-          <p>Tender marinated chicken, chargrilled and wrapped with crisp fresh produce and creamy tzatziki.</p>
-          <span class="card__meta">In a wrap or on a plate <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3>Mixed Meat Souvlaki</h3>
+          <p>Can't pick one? Load your pita with two or three proteins, plus fresh salad and your three sauces.</p>
+          <span class="card__meta">2 meat $27 &middot; 3 meat $29</span>
         </div>
       </article>
       <article class="card reveal">
-        <div class="card__img"><img src="img/p0.jpg" alt="Grilled lamb and mezze platter with salad and pita" loading="lazy" width="800" height="600"></div>
+        <div class="card__img"><img src="img/p0.jpg" alt="Grilled meat served on fresh salad with sauces" loading="lazy" width="800" height="600"></div>
         <div class="card__body">
-          <h3>Lamb Souvlaki</h3>
-          <p>Slow-marinated lamb with Mediterranean herbs — rich, tender and finished with a squeeze of lemon.</p>
-          <span class="card__meta">In a wrap or on a plate <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3>Meat on Salad</h3>
+          <p>No bread? Your protein on lettuce, tomato, carrot and red onion with any three sauces. Vegetarian and gluten free options.</p>
+          <span class="card__meta">$22 &middot; V, GF</span>
         </div>
       </article>
       <article class="card reveal">
-        <div class="card__img"><img src="img/p2.jpg" alt="Vegetarian Mediterranean bowl with chickpeas, olives and pita" loading="lazy" width="800" height="600"></div>
+        <div class="card__img"><img src="img/p6.jpg" alt="Grilled meat on chips with sauces" loading="lazy" width="800" height="600"></div>
         <div class="card__body">
-          <h3>Vegetarian Souvlaki</h3>
-          <p>A loaded meat-free wrap — grilled veg, chickpeas, salad and sauces, every bit as good as the classic.</p>
-          <span class="card__meta">In a wrap or on a plate <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3>Meat on Chips</h3>
+          <p>Your protein of choice piled on a bed of chips and finished with any three sauces.</p>
+          <span class="card__meta">1 meat $24 &middot; 2 meat $27 &middot; 3 meat $29</span>
         </div>
       </article>
       <article class="card reveal">
-        <div class="card__img"><img src="img/p6.jpg" alt="Bowl of seasoned Greek chips" loading="lazy" width="800" height="600"></div>
+        <div class="card__img"><span class="card__tag">For the kids</span><img src="img/p1.jpg" alt="Souvlaki in warm pita" loading="lazy" width="800" height="600"></div>
         <div class="card__body">
-          <h3>Chips &amp; Sides</h3>
-          <p>Golden seasoned chips, Greek salad and baklava to finish — the perfect sidekicks to your souvlaki.</p>
-          <span class="card__meta">Add to any order <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3>Kids Combo</h3>
+          <p>A half size souvlaki in pita, plus fries and a can of soft drink. Sized right for the little ones.</p>
+          <span class="card__meta">$15</span>
         </div>
       </article>
       <article class="card reveal">
         <div class="card__img"><span class="card__tag">Book ahead</span><img src="img/caravan-new.jpg" alt="Yeah Boi Souvlaki caravan set up for event catering in North Canterbury" loading="lazy" width="800" height="600"></div>
         <div class="card__body">
           <h3>Event Catering</h3>
-          <p>Parties, work do's and functions across North Canterbury — souvlaki platters that feed a crowd. Give Matt a call.</p>
-          <span class="card__meta">Enquire about catering <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <p>Parties, work do's and functions across North Canterbury. Souvlaki that feeds a crowd, give Matt a call.</p>
+          <span class="card__meta"><a href="tel:+64275040531">Enquire about catering <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></span>
         </div>
       </article>
     </div>
-    <p class="menu-note reveal">Meal deals come with <b>souvlaki, chips and a can of drink</b> &mdash; sauces include tzatziki, garlic, sweet chilli, BBQ, aioli &amp; more.</p>
+    <div class="menu-info reveal">
+      <div><b>Always in pita</b><span>Every souvlaki is wrapped in warm pita bread. Want it without? Go meat on salad.</span></div>
+      <div><b>Gluten free</b><span>Gluten free wrap available for +$3, or choose meat on salad (GF).</span></div>
+      <div><b>Homemade sauces</b><span>Tzatziki, red sauce (hot or mild), mayo, sweet chilli or BBQ. Pick any three.</span></div>
+    </div>
+    <p class="menu-note reveal">Make it a <b>combo</b> with fries and a can of drink: M $26 &middot; L $28. Also on the menu: <b>nugs &amp; fries</b>, fries and 330ml cans.</p>
+    <div class="menu-cta reveal"><a href="menu/yeah-boi-menu.pdf" target="_blank" rel="noopener" class="btn btn--accent">View the full menu (PDF)</a></div>
   </div>
 </section>
 
@@ -407,7 +420,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.72);padding:64px 0 26px}
         <span class="eyebrow">Our Story</span>
         <h2>Greek souvlaki, made right here in North Canterbury</h2>
         <p>Matt isn't Greek himself, but he grew up with family who taught him how to cook it properly. Yeah Boi Souvlaki is him bringing that to Rangiora: marinated meats grilled to order, warm pita and salads packed with fresh local produce.</p>
-        <p>Whether it's a quick lunch, the family's Friday night takeaway, or catering for your next event, we've got you sorted across Rangiora, Kaiapoi, Woodend, Oxford and greater Christchurch.</p>
+        <p>Whether it's a weeknight dinner, the family's Friday night takeaway, or catering for your next event, we've got you sorted across Rangiora, Kaiapoi, Woodend, Oxford and greater Christchurch.</p>
         <ul class="checklist">
           <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Fresh local produce, prepped daily</li>
           <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Greek recipes, learned the proper way</li>
@@ -425,14 +438,14 @@ footer{background:var(--dark);color:rgba(255,255,255,.72);padding:64px 0 26px}
     <div class="shead center reveal">
       <span class="eyebrow" style="justify-content:center">The Crew</span>
       <h2>The team behind the grill</h2>
-      <p>Local people making proper souvlaki — you'll usually find them chatting away while the pita warms.</p>
+      <p>Local people making proper souvlaki. You'll usually find them chatting away while the pita warms.</p>
     </div>
     <div class="crew-grid">
       <div class="card2 reveal">
         <div class="avatar">M</div>
         <h3>Matt</h3>
         <div class="role">Owner &amp; Grill Master</div>
-        <p>The man behind Yeah Boi Souvlaki — marinating, grilling and making sure every wrap goes out fresh.</p>
+        <p>The man behind Yeah Boi Souvlaki, marinating, grilling and making sure every souvlaki goes out fresh.</p>
       </div>
       <div class="card2 reveal">
         <div class="avatar">YB</div>
@@ -498,7 +511,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.72);padding:64px 0 26px}
   <div class="wrap g">
     <span class="eyebrow" style="justify-content:center;color:#fff">Enjoyed your souvlaki?</span>
     <h2>Happy with your feed? Leave us a review</h2>
-    <p>A quick review on Google helps other locals find us — and means the world to a small Rangiora business.</p>
+    <p>A quick review on Google helps other locals find us, and means the world to a small Rangiora business.</p>
     <a href="https://www.google.com/maps/search/?api=1&query=Yeah+Boi+Souvlaki+Rangiora" target="_blank" rel="noopener" class="btn btn--gold">
       <svg class="svg-i" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       Leave a Google review
@@ -536,7 +549,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.72);padding:64px 0 26px}
       </div>
       <div class="contact-card reveal">
         <h3>Order now</h3>
-        <p>Ring through your order or send Matt an email — no forms, no fuss. We'll have it hot and ready.</p>
+        <p>Ring through your order or send Matt an email. No forms, no fuss. We'll have it hot and ready.</p>
         <a href="tel:+64275040531" class="btn btn--accent">
           <svg class="svg-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Call 027 504 0531
@@ -583,7 +596,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.72);padding:64px 0 26px}
         <h5>Menu</h5>
         <ul>
           <li><a href="#menu">Souvlaki</a></li>
-          <li><a href="#menu">Chips &amp; sides</a></li>
+          <li><a href="#menu">Kids combo</a></li>
+          <li><a href="menu/yeah-boi-menu.pdf" target="_blank" rel="noopener">Full menu (PDF)</a></li>
           <li><a href="#menu">Event catering</a></li>
           <li><a href="#about">About us</a></li>
         </ul>
